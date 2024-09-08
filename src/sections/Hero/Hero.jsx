@@ -1,11 +1,8 @@
 import styles from './HeroStyles.module.css';
-import heroImg from '../../assets/Design uten navn.png';
+import heroImg from '../../assets/My_Picture.png';
+import eiffel from "../../assets/eiffel_tower.png"
 import sun from '../../assets/sun.svg';
 import moon from '../../assets/moon.svg';
-import twitterLight from '../../assets/twitter-light.svg';
-import twitterDark from '../../assets/twitter-dark.svg';
-import githubLight from '../../assets/github-light.svg';
-import githubDark from '../../assets/github-dark.svg';
 import linkedinLight from '../../assets/linkedin-light.svg';
 import linkedinDark from '../../assets/linkedin-dark.svg';
 import CV from '../../assets/cv.pdf';
@@ -15,8 +12,6 @@ function Hero() {
   const { theme, toggleTheme } = useTheme();
 
   const themeIcon = theme === 'light' ? sun : moon;
-  const twitterIcon = theme === 'light' ? twitterLight : twitterDark;
-  const githubIcon = theme === 'light' ? githubLight : githubDark;
   const linkedinIcon = theme === 'light' ? linkedinLight : linkedinDark;
 
   return (
@@ -25,7 +20,7 @@ function Hero() {
         <img
           src={heroImg}
           className={styles.hero}
-          alt="Profile picture of Harris Johnsen"
+          alt="Profile picture of Bahae-Eddine JMAHRI"
         />
         <img
           className={styles.colorMode}
@@ -36,29 +31,28 @@ function Hero() {
       </div>
       <div className={styles.info}>
         <h1>
-          Harris
+          Bahae-Eddine
           <br />
-          Johnsen
+          JMAHRI
         </h1>
-        <h2>Frontend Developer</h2>
-        <span>
-          <a href="https://twitter.com/" target="_blank">
-            <img src={twitterIcon} alt="Twitter icon" />
-          </a>
-          <a href="https://github.com/" target="_blank">
-            <img src={githubIcon} alt="Github icon" />
-          </a>
-          <a href="https://linkedin.com/" target="_blank">
-            <img src={linkedinIcon} alt="Linkedin icon" />
+        <h2>Embedded Software Engineer</h2>
+        <p className={styles.description}>
+        <img
+          src={eiffel}
+          className={styles.parisIcon}
+          alt="Eiffel tower icon"
+        />
+          <br />
+          Based in Paris.
+          <br />
+          <span>
+          <a href="https://www.linkedin.com/in/bahae-eddine-jmahri/" target="_blank">
+            <img src={linkedinIcon}  className={styles.LinkedinIconConf} alt="Linkedin icon" />
           </a>
         </span>
-        <p className={styles.description}>
-          With a passion for developing modern React web apps for commercial
-          businesses.
         </p>
-        <a href={CV} download>
-          <button className="hover">Resume</button>
-        </a>
+
+
       </div>
     </section>
   );
